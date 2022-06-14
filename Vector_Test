@@ -1,0 +1,42 @@
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <set>
+using namespace std;
+
+void test01()
+{
+	vector<int> v1;
+	vector<int> v2(10, 1);
+	vector<int> v3(5);
+	vector<int> v4(v3);				//初始化方式
+	for (int i = 0; i < 10; i++)
+	{
+		v1.push_back(i);
+	}
+	v1.push_back(66);
+	v1.push_back(66);
+
+	v1.insert(v1.begin() + 4, 555);		//在第五个位置前插入元素
+
+	//set<int> s(v1.begin(), v1.end());	//利用set去重
+	//v1.assign(s.begin(), s.end());	//区间数据赋值给v1
+
+	vector<int>::iterator iter;
+	for (iter = v1.begin(); iter != v1.end(); iter++)
+	{
+		cout << *iter << endl;
+	}
+
+	//v1.size();//返回容器中实际数据的个数
+	//v1.capacity();//返回容器中数据个数。
+	//v1.clear();//清除数据元素；
+	//v1.empty();//判断是否为空
+	//v1.at(2);	//v1.at(id);  返回索引id所指的数据
+}
+int main()
+{
+	test01();
+
+}
